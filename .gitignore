@@ -1,0 +1,19 @@
+# Build artifacts
+*.exe
+*.obj
+*.ilk
+*.pdb
+*.log
+*.out
+
+# Visual Studio / Windows
+.vs/
+*.sln
+*.vcxproj
+*.filters
+*.user
+*.suo
+
+# OS files
+Thumbs.db
+Desktop.ini
