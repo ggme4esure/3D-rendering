@@ -16,12 +16,12 @@ using namespace std;
 #define THING1 800
 #define THING2 600
 
-// Rotation angles for the cube.
+// Rotation .
 float gAngleX = 0.4f; 
 float gAngleY = 0.6f;   
 float gAngleZ = 0.2f; 
 
-// Current window size and pixel buffer.
+//  window size pixel buffer.
 int w = THING1;
 int h = THING2;
 vector<uint32_t> pxls;
@@ -30,12 +30,12 @@ float fps_global = 0.0f;
 int temp_counter_thing = 0;
 float temp_timer_thing = 0.0f;
 
-// Simple RGB color structure.
+//  color structure.
 struct col {
     uint8_t r, g, b;
 };
 
-// Pack an RGB color into a single 32-bit pixel value.
+//  color into a single 32-bit pixel value.
 uint32_t p(col c) {
     return (c.r << 16) | (c.g << 8) | c.b;
 }
@@ -59,7 +59,7 @@ col depthCol(float z) {
     return mix(a, b, t);
 }
 
-// Rotate a point around the X axis.
+// Rotate around X 
 void doRotation1(float* x, float* y, float* z, float angle) {
     float c = cos(angle);
     float s = sin(angle);
@@ -69,7 +69,7 @@ void doRotation1(float* x, float* y, float* z, float angle) {
     *z = newZ;
 }
 
-// Rotate a point around the Y axis.
+// Rotate around the Y 
 void doRotation2(float* x, float* y, float* z, float angle) {
     float c = cos(angle);
     float s = sin(angle);
@@ -79,7 +79,7 @@ void doRotation2(float* x, float* y, float* z, float angle) {
     *z = newZ;
 }
 
-// Rotate a point around the Z axis.
+// Rotate around the Z axis.
 void doRotation3(float* x, float* y, float* z, float angle) {
     float c = cos(angle);
     float s = sin(angle);
@@ -119,7 +119,7 @@ void cls() {
     }
 }
 
-// Draw a line between two points with color interpolation.
+// Draw a line between two points with color .
 void line(int x0, int y0, int x1, int y1, col color1, col color2) {
     int dx = abs(x1 - x0);
     int dy = abs(y1 - y0);
@@ -229,7 +229,7 @@ void drawTheCube() {
     }
 }
 
-// Handle basic window messages.
+// window thing.
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
     if (msg == WM_DESTROY) {
         PostQuitMessage(0);
@@ -249,7 +249,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
     return DefWindowProc(hwnd, msg, wp, lp);
 }
 
-// Start the window and run the render loop.
+// Start window with loop.
 int main() {
     HINSTANCE hInst = GetModuleHandle(NULL);
     
@@ -264,9 +264,8 @@ int main() {
     
     RECT r = {0, 0, THING1, THING2};
     AdjustWindowRect(&r, WS_OVERLAPPEDWINDOW, FALSE);
-    
     HWND hwnd = CreateWindowEx(0, cn,
-        "3D Engine from Scratch - Spinning Cube Demo",
+
         WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, CW_USEDEFAULT,
         r.right - r.left, r.bottom - r.top,
