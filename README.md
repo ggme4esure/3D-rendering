@@ -12,5 +12,4 @@ Compile with a C++ compiler on Windows, for example:
 build.bat
 ```
 
-## Notes
-This project is a simple educational rendering demo and is not meant for production use.
+
